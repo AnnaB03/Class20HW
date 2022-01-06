@@ -1,27 +1,40 @@
 package Class20.HW;
 
 public class CreditCard {
-    double balance = 2000;
-    double interest = 3.00;
+    double balance;
+    double interest;
+
+    CreditCard (double balance) {
+        this.balance = balance;
+    }
     void calculate () {
-        System.out.println((balance*interest)/100);
+        interest = balance*0.15;
+        System.out.println(interest);
+        System.out.println(balance);
     }
 } class Visa extends CreditCard {
-    void calculate () {
-        System.out.println((balance-interest)/100);
+    Visa(double balance) {
+        super(balance);
     }
 
-} class AX extends CreditCard {
+    @Override
     void calculate () {
-        System.out.println((balance+interest)/100);
+        interest = balance*0.05;
+        System.out.println(interest);
+    }
+    static class AX extends CreditCard {
+    AX(double balance) {
+        super(balance);
+    }
+
     }
 
     public static void main(String[] args) {
-        CreditCard cc = new CreditCard();
+        CreditCard cc = new CreditCard(100);
         cc.calculate();
-        Visa visa = new Visa();
+        Visa visa = new Visa(200);
         visa.calculate();
-        AX ax = new AX();
+        AX ax = new AX(300);
         ax.calculate();
     }
 }

@@ -6,12 +6,9 @@ public class Degree {
     }
 }
 class Bachelors extends Degree {
-    void getPrerequisites () {
-        System.out.println("I have Bachelors Degree");
 
     }
-
-} class Masters extends Degree {
+    class Masters extends Degree {
     void getPrerequisites() {
         System.out.println("I have Masters Degree");
 
@@ -20,7 +17,7 @@ class Bachelors extends Degree {
         Degree degree = new Degree();
         degree.getPrerequisite();
         Bachelors bachelors = new Bachelors();
-        bachelors.getPrerequisites();
+        bachelors.getPrerequisite();
         Masters masters = new Masters();
         masters.getPrerequisites();
 
